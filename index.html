@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWF Game Archive | CalOnz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <h1 class="pt-5 text-center text-3xl font-bold ">
+         SWF Game Archive
+      </h1>
+      <p class="text-center text-xl">Page hosted with <b>CPages</b></p><br/>
+
+      <center>
+        <a href="https://oyun.macesdev.net/data.json"class="text-center">Raw Content Structure</a>
+      </center>
+
+      <div class="pt-6 pb-3">
+        <hr />
+      </div>
+
+      <div class="pt-3">
+        <div
+          id="veriLisesi"
+          class="pb-1"
+        >
+
+
+        <!--           <div class="pb-2 column">
+            <div class="flex items-center space-x-4">
+              <div class="flex-shrink-0">
+                
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" 
+                 stroke="currentColor" 
+                 class="w-6 h-6 ml-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                  </svg>
+                  
+                
+              </div>
+              <div class="flex-1 min-w-0">
+                <p
+                  class="text-sm font-medium text-black-900 truncate dark:text-black"
+                >
+                  <a>Ateş ve Su I</a>
+                </p>
+                <p
+                  class="text-sm text-base text-gray-500 truncate dark:text-black-400"
+                >            
+                🡆 ates_ve_su1.swf
+              </p>
+              </div>
+              <div
+                class="inline-flex items-center pr-6 text-black font-semibold text-black-900 dark:text-black"
+              >
+              <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Download
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <script>
+          // JSON dosyasından verileri çekmek için bir AJAX isteği yapalım
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://oyun.macesdev.net/data2.json", true);
+          xhr.onreadystatechange = function () {
+              if (xhr.readyState == 4 && xhr.status == 200) {
+                  // JSON verilerini parse edelim
+                  var veriler = JSON.parse(xhr.responseText);
+                  console.log(veriler);
+                  // Verileri HTML içine yerleştirelim
+                  var veriListesiDiv = document.getElementById("veriListesi");
+                  veriler.forEach(function (veri) {
+                      var veriDiv = document.createElement("div");
+                      veriDiv.innerHTML = "<strong>İsim:</strong> " + veri.isim + "<br>" +
+                                          "<strong>Yaş:</strong> " + veri.yas + "<br>" +
+                                          "<strong>Şehir:</strong> " + veri.sehir + "<br><br>";
+                      veriListesiDiv.appendChild(veriDiv);
+                  });
+              }
+          };
+          xhr.send();
+      </script>
+
+        <div class="pt-3">
+          <hr />
+          <span
+            class="pt-5 block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >
+            © 2023 CalOnz Foundation, Inc. <br/>
+            All Rights Reserved.
+          </span>
+        </div>
+      </div>
+</body>
+</html>
