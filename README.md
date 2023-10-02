@@ -1,6 +1,6 @@
-# COMTAL SWF Oyun Arşivi
+# comtal-game-archive
 
-Arama Yapmak İçin `CTRL + F` kombinasyonunu kullanın.
+Arama Yapmak İçin `CTRL + F` kombinasyonunu kullanın. <br/>
 71 of 71 SWF Files Found
 
 --------------------------- 
